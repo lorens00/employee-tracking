@@ -24,7 +24,7 @@ module.exports.registerEmployee = async (req, res, next) => {
         }
 
         const hashedPassword = await bcrypt.hash(password, 10);
-        const [result] = await pool.query('INSERT INTO employees (name, email, password, createdAt) VALUES (?, ?, ?, ?)', [name, email, hashedPassword, new Date()]);
+        const [result] = await pool.query('INSERT INTO employees (employee_name, email, password, createdAt) VALUES (?, ?, ?, ?)', [name, email, hashedPassword, new Date()]);
         res.status(201).json({ message: 'Employee registered successfully', employeeId: result.insertId });
     } catch (error) {
         console.error(error); // Log error for debugging
@@ -68,6 +68,17 @@ module.exports.getEmployeeDetails = async (req, res, next) => {
         res.status(200).json(employee);
     } catch (error) {
         console.error('Error fetching employee details:', error);
+        next(error);
+    }
+};
+
+// Get all employee details
+module.exports.getAllEmployeeDetails = async (req, res, next) => {
+    try {
+        const [rows] = await pool.query('SELECT * FROM employees');
+        res.status(200).json(rows);
+    } catch (error) {
+        console.error(error);
         next(error);
     }
 };

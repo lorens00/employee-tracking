@@ -1,7 +1,7 @@
 
 class TimeLog {
-    constructor(employeeId, timeIn, timeOut, breakIn, breakOut) {
-        this.employeeId = employeeId;
+    constructor(employeeName, timeIn, timeOut, breakIn, breakOut) {
+        this.employeeName = employeeName;
         this.timeIn = timeIn;
         this.breakIn = breakIn;
         this.breakOut = breakOut;

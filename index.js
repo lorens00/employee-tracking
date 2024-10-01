@@ -7,7 +7,7 @@ require('dotenv').config();
 // Route Imports
 const employeeRoutes = require('./routes/employee');
 const timelogRoutes = require('./routes/timelogs');
-const { errorHandler } = require('./auth'); // Import the error handler function
+const { errorHandler } = require('./auth');
 
 // Initialize Express App
 const app = express();

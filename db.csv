@@ -1,0 +1,3 @@
+employee_id,employee_name,email,password,isAdmin,createdAt
+1,test,test@mail.com,$2a$10$GWSX5Uae0xQ.YXgLvOmVouz0qPNoQd4fzdargXasMr5FhFgwNm7u.,0,"2024-10-01 12:56:02"
+2,admin,admin@mail.com,$2a$10$DjajgpPDPDqUaGfCB3rJeuror5u3mMtuQMJIlb3SZJFwnAGlborai,1,"2024-10-01 12:56:16"
